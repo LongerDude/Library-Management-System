@@ -91,18 +91,6 @@ public class Library {
         return matches;
     }
 
-    /**
-     * Retrieves a flattened list of all unique books currently stored in the library.
-     * This is useful for displaying a complete inventory (e.g., in a "View All Books" feature).
-     *
-     * @return A List of all Book objects across all titles.
-     */
-    public List<Book> getAllBooks() {
-        // Uses stream flatMap to collect all the ArrayLists (values) from the Map into a single, flat list.
-        return books.values().stream()
-                .flatMap(Collection::stream)
-                .toList();
-    }
 
     /**
      * Delegates the borrowing operation to the specific Book object.
